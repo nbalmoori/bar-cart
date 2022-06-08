@@ -10,8 +10,9 @@ const IngredientsContainer = ( {ingredientsList} ) => {
   })
 
   return (
-    <div>
-      {listOfIngredients}
+    <div >
+      <h1 className="title">Choose your Ingredient</h1>
+      <div className="ingredientsContainer">{listOfIngredients}</div>
     </div>
   )
 }
