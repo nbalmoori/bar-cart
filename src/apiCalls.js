@@ -5,5 +5,37 @@ const getFetch = (address) => {
 
 }
 
+const dataCocktailCleaner = (data) => {
+
+  const drink = data.drinks[0];
+
+  const getIngredientList = () => {
+    const ingredientList = Object.keys(drink)
+      .filter(prop => prop.includes("Ingredient"))
+      .reduce((list, ingredient) => {
+        if (drink[ingredient])
+        list.push(drink[ingredient])
+        return list
+      }, [])
+  
+    return ingredientList.map(ingredient => {
+      if (drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]) {
+        return `${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]}of ${ingredient}`
+      } else {
+        return `${ingredient}`
+      }
+    })
+  };
+
+  return {
+    id: drink.idDrink,
+    name: drink.strDrink,
+    image: drink.strDrinkThumb,
+    glass: drink.strGlass,
+    ingredients: getIngredientList(),
+    instructions: drink.strInstructions
+  };
+};
 
 export default getFetch;
+export { dataCocktailCleaner };

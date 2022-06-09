@@ -34,7 +34,7 @@ class App extends Component {
         <header>BAR CART</header>
         <Route exact path='/' render={() => <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/> } /> 
         <Route exact path='/' render={() => <FilteredCocktailContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/> } />
-        <Route exact path='/id' render={({ match }) => <CocktailDetails />} />
+        <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id}/>} />
       </main>
     );
   };
