@@ -3,3 +3,8 @@
   height: 180px;
   width: 180px;
 }
+
+.ingredient-image,
+.ingredient-name {
+  pointer-events: none;
+}

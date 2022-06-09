@@ -1,12 +1,12 @@
 import '../styling/Ingredient.css';
 
-const Ingredient = ({name}) => {
+const Ingredient = ({name, selectFilter}) => {
   return (
-    <div className="ingredient">
-      <img src={`https://www.thecocktaildb.com/images/ingredients/${name}-Small.png`}/>
-      <p>{name}</p>
+    <div className="ingredient" id={name} onClick={(event) => selectFilter(event.target.id)}>
+      <img className="ingredient-image" src={`https://www.thecocktaildb.com/images/ingredients/${name}-Small.png`} alt={name}/>
+      <p className="ingredient-name">{name}</p>
     </div>
-  )
-}
+  );
+};
 
 export default Ingredient;
