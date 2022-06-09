@@ -1,0 +1,14 @@
+.ingredient {
+  /* border: 2px solid black; */
+  height: 150px;
+  width: 100px;
+}
+
+.ingredient-image {
+  height: 75px;
+}
+
+.ingredient-image,
+.ingredient-name {
+  pointer-events: none;
+}
