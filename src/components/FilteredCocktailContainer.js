@@ -1,9 +1,9 @@
-import Recipe from './Recipe';
-import '../styling/FilteredRecipeContainer.css';
+import Cocktail from './Cocktail';
+import '../styling/FilteredCocktailContainer.css';
 
-const FilteredRecipeContainer = ( {filteredRecipes, filter} ) => {
+const FilteredCocktailContainer = ( {filteredRecipes, filter} ) => {
   const listOfRecipes = filteredRecipes.map(recipe => {
-    return <Recipe 
+    return <Cocktail 
       name={recipe.strDrink} 
       image={recipe.strDrinkThumb}
       id={recipe.idDrink}
@@ -19,4 +19,4 @@ const FilteredRecipeContainer = ( {filteredRecipes, filter} ) => {
   );
 };
 
-export default FilteredRecipeContainer;
+export default FilteredCocktailContainer;
