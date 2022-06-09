@@ -6,6 +6,7 @@ const FilteredRecipeContainer = ( {filteredRecipes, filter} ) => {
     return <Recipe 
       name={recipe.strDrink} 
       image={recipe.strDrinkThumb}
+      id={recipe.idDrink}
       key={recipe.idDrink}
     />
   });

@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import getFetch from '../apiCalls';
 import IngredientsContainer from './IngredientsContainer.js';
 import FilteredRecipeContainer from './FilteredRecipeContainer.js';
@@ -30,8 +31,8 @@ class App extends Component {
     return (
       <main className="App">
         <header>BAR CART</header>
-        <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/>
-        {this.state.filter && <FilteredRecipeContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>}
+        <Route exact path='/' render={() => <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/> } /> 
+        <Route exact path='/' render={() => <FilteredRecipeContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/> } />
       </main>
     );
   };

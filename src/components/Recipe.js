@@ -1,8 +1,8 @@
 import '../styling/Recipe.css';
 
-const Recipe = ({name, image, key}) => {
+const Recipe = ({name, image, id}) => {
   return (
-    <div class="cocktail" id={key}>
+    <div className="cocktail" id={id}>
       <img className="cocktail-image" src={image}/>
       <p className="cocktail-name"> {name}</p>
     </div>
