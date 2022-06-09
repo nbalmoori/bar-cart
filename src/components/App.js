@@ -31,7 +31,7 @@ class App extends Component {
       <main className="App">
         <header>BAR CART</header>
         <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/>
-        <FilteredRecipeContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>
+        {this.state.filter && <FilteredRecipeContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>}
       </main>
     );
   };

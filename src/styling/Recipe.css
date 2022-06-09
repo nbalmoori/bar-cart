@@ -1,0 +1,13 @@
+.cocktail {
+  /* border: 2px solid black; */
+  width: 250px;
+}
+
+.cocktail-image {
+  height: 200px;
+}
+
+.cocktail-image,
+.cocktail-name {
+  pointer-events: none;
+}

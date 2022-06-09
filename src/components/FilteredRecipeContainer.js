@@ -1,5 +1,5 @@
 import Recipe from './Recipe';
-import '../styling/FilteredRecipeContainer';
+import '../styling/FilteredRecipeContainer.css';
 
 const FilteredRecipeContainer = ( {filteredRecipes, filter} ) => {
   const listOfRecipes = filteredRecipes.map(recipe => {
@@ -13,7 +13,7 @@ const FilteredRecipeContainer = ( {filteredRecipes, filter} ) => {
   return (
     <div>
     <h2>The following drinks contain {filter}</h2>
-    <div>{listOfRecipes}</div>
+    <div className="filteredRecipes">{listOfRecipes}</div>
     </div>
   );
 };
