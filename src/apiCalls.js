@@ -20,7 +20,7 @@ const dataCocktailCleaner = (data) => {
   
     return ingredientList.map(ingredient => {
       if (drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]) {
-        return `${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]}of ${ingredient}`
+        return `${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]} of ${ingredient}`
       } else {
         return `${ingredient}`
       }
