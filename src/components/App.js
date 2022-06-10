@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import getFetch from '../apiCalls';
-import IngredientsContainer from './IngredientsContainer';
-import FilteredCocktailContainer from './FilteredCocktailContainer';
+import Homepage from './Homepage';
 import CocktailDetails from './CocktailDetails';
+import Favorites from './Favorites';
 import '../styling/App.css';
 
 class App extends Component {
@@ -13,6 +13,7 @@ class App extends Component {
       ingredientsList: [],
       filter: "",
       filteredRecipes: [],
+      favorites: [],
     };
   };
 
@@ -32,12 +33,15 @@ class App extends Component {
     return (
       <main className="App">
         <header>BAR CART</header>
-        <Route exact path='/' render={() => <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/> } /> 
-        <Route exact path='/' render={() => <FilteredCocktailContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/> } />
-        <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id}/>} />
+        <Switch>
+          <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>}/> 
+          <Route exact path='/favorites' render={() => <Favorites favorites={this.state.favorites}/>} />
+          <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id}/>}/>
+        </Switch>
       </main>
     );
   };
 };
 
 export default App;
+
