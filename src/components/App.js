@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom';
 import getFetch from '../apiCalls';
 import Homepage from './Homepage';
 import CocktailDetails from './CocktailDetails';
@@ -29,6 +29,10 @@ class App extends Component {
     .then(data => this.setState({filteredRecipes: data}))
   };
 
+  addToFavorites = (id) => {
+    this.setState({favorites: [...this.state.favorites, id]})
+  }
+
   render() {
     return (
       <main className="App">
@@ -36,7 +40,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>}/> 
           <Route exact path='/favorites' render={() => <Favorites favorites={this.state.favorites}/>} />
-          <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id}/>}/>
+          <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id} addToFavorites={this.addToFavorites}/>}/>
         </Switch>
       </main>
     );

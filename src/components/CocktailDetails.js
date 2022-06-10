@@ -26,7 +26,7 @@ class CocktailDetails extends Component {
       <p>Instructions: {this.state.details.instructions}</p>
       <p>Glass: {this.state.details.glass}</p>
       <img src={this.state.details.image}/>
-      <button>Add to Favorites</button>
+      <button onClick={() => this.props.addToFavorites(this.state.details)}>Add to Favorites</button>
     </div>
   };
 };
