@@ -1,9 +1,25 @@
 const getFetch = (address) => {
-
   return fetch(`https://www.thecocktaildb.com/api/json/v1/1/${address}`)
   .then(response => response.json())
 
+};
+
+
+const dataIngredientsCleaner = (data) => {
+  return data.drinks.map(ingredient => ingredient.strIngredient1)
 }
+
+const dataFilterCleaner = (data) => {
+  return data.drinks.map(drink => {
+    return {
+      id: drink.idDrink,
+      name: drink.strDrink,
+      image: drink.strDrinkThumb,
+    };
+  });
+};
+
+
 
 const dataCocktailCleaner = (data) => {
 
@@ -16,15 +32,15 @@ const dataCocktailCleaner = (data) => {
         if (drink[ingredient])
         list.push(drink[ingredient])
         return list
-      }, [])
+      }, []);
   
     return ingredientList.map(ingredient => {
       if (drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]) {
         return `${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]} of ${ingredient}`
       } else {
         return `${ingredient}`
-      }
-    })
+      };
+    });
   };
 
   return {
@@ -38,4 +54,4 @@ const dataCocktailCleaner = (data) => {
 };
 
 export default getFetch;
-export { dataCocktailCleaner };
+export { dataCocktailCleaner, dataFilterCleaner, dataIngredientsCleaner};

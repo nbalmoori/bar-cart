@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import getFetch from '../apiCalls';
+import getFetch, { dataFilterCleaner, dataIngredientsCleaner } from '../apiCalls';
 import Homepage from './Homepage';
 import CocktailDetails from './CocktailDetails';
 import Favorites from './Favorites';
@@ -19,17 +19,19 @@ class App extends Component {
 
   componentDidMount = () => {
     getFetch('list.php?i=list')
-    .then(data => data.drinks.map(ingredient => ingredient.strIngredient1))
+    .then(data => dataIngredientsCleaner(data))
     .then(data => this.setState({ingredientsList: data}))
   };
 
   selectFilter = (ingredient) => {
     this.setState({filter: ingredient});
-    getFetch(`filter.php?i=${ingredient}`).then(data => data.drinks)
+    getFetch(`filter.php?i=${ingredient}`)
+    .then(data => dataFilterCleaner(data))
     .then(data => this.setState({filteredRecipes: data}))
   };
 
   addToFavorites = (id) => {
+
     this.setState({favorites: [...this.state.favorites, id]})
   }
 
