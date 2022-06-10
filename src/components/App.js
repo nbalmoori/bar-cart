@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import getFetch from '../apiCalls';
-import IngredientsContainer from './IngredientsContainer.js';
-import FilteredRecipeContainer from './FilteredRecipeContainer.js';
+import IngredientsContainer from './IngredientsContainer';
+import FilteredCocktailContainer from './FilteredCocktailContainer';
+import CocktailDetails from './CocktailDetails';
 import '../styling/App.css';
 
 class App extends Component {
@@ -30,8 +32,9 @@ class App extends Component {
     return (
       <main className="App">
         <header>BAR CART</header>
-        <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/>
-        {this.state.filter && <FilteredRecipeContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>}
+        <Route exact path='/' render={() => <IngredientsContainer ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter}/> } /> 
+        <Route exact path='/' render={() => <FilteredCocktailContainer filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/> } />
+        <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id}/>} />
       </main>
     );
   };
