@@ -13,7 +13,7 @@ const FilteredCocktailContainer = ( {filteredCocktails, filter} ) => {
 
   if (filter) 
     {return (
-      <div>
+      <div className="filteredCocktailsView">
       <h2>The following drinks contain {filter.toLowerCase()}:</h2>
       <div className="filteredCocktails">{listOfCocktails}</div>
       </div>

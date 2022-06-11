@@ -30,13 +30,15 @@ const dataCocktailCleaner = (data) => {
         return list
       }, []);
   
-    return ingredientList.map(ingredient => {
+    const ingredientListDetails = ingredientList.map(ingredient => {
       if (drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]) {
         return `${ingredient}: ${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]}`
       } else {
         return `${ingredient}`
       };
     });
+
+    return ingredientListDetails.join(', ')
   };
 
   return {
