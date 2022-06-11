@@ -11,10 +11,9 @@ const IngredientsContainer = ( {ingredientsList, selectFilter} ) => {
 
   return (
     <div className="ingredientsView">
+      <Link to={`/favorites`}><button className="favoriteButton">View Your Favorite Cocktails</button></Link>
       <h1 className="title">Choose your Ingredient</h1>
       <div className="ingredientsContainer">{listOfIngredients}</div>
-      <h1 className="title">or</h1>
-      <Link to={`/favorites`}><button className="favoriteButton">View Your Favorite Cocktails</button></Link>
     </div>
   );
 };

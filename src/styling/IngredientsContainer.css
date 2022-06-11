@@ -1,5 +1,5 @@
 .ingredientsView {
-  padding-top: 25vh;
+  padding-top: 15vh;
   padding-bottom: 25vh;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,7 @@
 }
 
 button {
+  margin-top: 5vh;
   cursor: pointer;
   font-family: "Joan", serif;
 }
