@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import IngredientsContainer from './IngredientsContainer';
 import FilteredCocktailContainer from './FilteredCocktailContainer';
 import homepageImage from '../assets/homepage.jpg'
@@ -7,7 +6,7 @@ import '../styling/Homepage.css';
 
 const HomePage = ({ ingredientsList, selectFilter, filter, filteredCocktails}) => {
   return (
-    <div>
+    <div className="homepage">
       <header>
         <div className="homepageHeader">
           <h1 className="homepageTitle">BAR CART</h1>
@@ -21,7 +20,6 @@ const HomePage = ({ ingredientsList, selectFilter, filter, filteredCocktails}) =
         </div>
         <img className="homepageImage" src={homepageImage}/>
       </header>
-      <Link to={`/favorites`}><button>See Your Favorites</button></Link>
       <IngredientsContainer ingredientsList={ingredientsList} selectFilter={selectFilter}/>
       <FilteredCocktailContainer filter={filter} filteredCocktails={filteredCocktails}/>
     </div>
