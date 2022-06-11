@@ -1,9 +1,7 @@
 const getFetch = (address) => {
   return fetch(`https://www.thecocktaildb.com/api/json/v1/1/${address}`)
   .then(response => response.json())
-
 };
-
 
 const dataIngredientsCleaner = (data) => {
   return data.drinks.map(ingredient => ingredient.strIngredient1)
@@ -18,8 +16,6 @@ const dataFilterCleaner = (data) => {
     };
   });
 };
-
-
 
 const dataCocktailCleaner = (data) => {
 
@@ -36,7 +32,7 @@ const dataCocktailCleaner = (data) => {
   
     return ingredientList.map(ingredient => {
       if (drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]) {
-        return `${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]} of ${ingredient}`
+        return `${ingredient}: ${drink[`strMeasure${ingredientList.indexOf(ingredient) + 1}`]}`
       } else {
         return `${ingredient}`
       };

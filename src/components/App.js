@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       ingredientsList: [],
       filter: "",
-      filteredRecipes: [],
+      filteredCocktails: [],
       favorites: [],
     };
   };
@@ -27,20 +27,19 @@ class App extends Component {
     this.setState({filter: ingredient});
     getFetch(`filter.php?i=${ingredient}`)
     .then(data => dataFilterCleaner(data))
-    .then(data => this.setState({filteredRecipes: data}))
+    .then(data => this.setState({filteredCocktails: data}))
   };
 
-  addToFavorites = (id) => {
-
-    this.setState({favorites: [...this.state.favorites, id]})
-  }
+  addToFavorites = (cocktail) => {
+    this.setState({favorites: [...this.state.favorites, cocktail]})
+  };
 
   render() {
     return (
       <main className="App">
         <header>BAR CART</header>
         <Switch>
-          <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredRecipes={this.state.filteredRecipes}/>}/> 
+          <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredCocktails={this.state.filteredCocktails}/>}/> 
           <Route exact path='/favorites' render={() => <Favorites favorites={this.state.favorites}/>} />
           <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id} addToFavorites={this.addToFavorites}/>}/>
         </Switch>
