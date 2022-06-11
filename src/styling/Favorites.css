@@ -1,0 +1,6 @@
+.favoriteCocktails {
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

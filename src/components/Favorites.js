@@ -14,9 +14,10 @@ const Favorites = ( {favorites} ) => {
   });
 
   return (
-    <div>
-      <Link to={`/`}><button>Home</button></Link>
-      {listOfFavoriteCocktails}
+    <div className="favoritesPageView">
+      <h1>Favorite Recipes</h1>
+      <Link to={`/`}><button>Return Home</button></Link>
+      <div className="favoriteCocktails">{listOfFavoriteCocktails}</div>
     </div>
   );
 };
