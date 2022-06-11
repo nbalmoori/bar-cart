@@ -1,20 +1,20 @@
 import Cocktail from './Cocktail';
 import '../styling/FilteredCocktailContainer.css';
 
-const FilteredCocktailContainer = ( {filteredRecipes, filter} ) => {
-  const listOfRecipes = filteredRecipes.map(recipe => {
+const FilteredCocktailContainer = ( {filteredCocktails, filter} ) => {
+  const listOfCocktails = filteredCocktails.map(cocktail => {
     return <Cocktail 
-      name={recipe.strDrink} 
-      image={recipe.strDrinkThumb}
-      id={recipe.idDrink}
-      key={recipe.idDrink}
+      name={cocktail.name} 
+      image={cocktail.image}
+      id={cocktail.id}
+      key={cocktail.id}
     />
   });
 
   return (
     <div>
     <h2>The following drinks contain {filter}</h2>
-    <div className="filteredRecipes">{listOfRecipes}</div>
+    <div className="filteredCocktails">{listOfCocktails}</div>
     </div>
   );
 };
