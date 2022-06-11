@@ -40,6 +40,7 @@ class App extends Component {
     return (
       <main className="App">
         <header>BAR CART</header>
+        <img src="./homepage.jpg"/>
         <Switch>
           <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredCocktails={this.state.filteredCocktails}/>}/> 
           <Route exact path='/favorites' render={() => <Favorites favorites={this.state.favorites}/>} />
