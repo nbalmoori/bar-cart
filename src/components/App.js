@@ -31,7 +31,9 @@ class App extends Component {
   };
 
   addToFavorites = (cocktail) => {
-    this.setState({favorites: [...this.state.favorites, cocktail]})
+    if (!this.state.favorites.includes(cocktail)) {
+      this.setState({favorites: [...this.state.favorites, cocktail]})
+    };
   };
 
   render() {
