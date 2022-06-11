@@ -21,6 +21,7 @@ class CocktailDetails extends Component {
   render = () => {
     return <div>
       <Link to={`/`}> <button>Home</button> </Link>
+      <Link to={`/favorites`}> <button>Favorites</button> </Link>
       <h1>{this.state.details.name}</h1>
       <p>Ingredients: {this.state.details.ingredients}</p>
       <p>Instructions: {this.state.details.instructions}</p>
