@@ -8,7 +8,8 @@ class CocktailDetails extends Component {
     super(props);
     this.state = {
       id: props.id,
-      details: {}
+      details: {},
+      error: false
     };
   };
 
@@ -16,10 +17,14 @@ class CocktailDetails extends Component {
     getFetch(`lookup.php?i=${this.state.id}`)
     .then(data => dataCocktailCleaner(data))
     .then(data => this.setState({details: data}))
+    .catch(this.setState({error: true}))
   };
 
   render = () => {
-    return <div className="cocktailDetailsView">
+    if (this.state.error) {
+      return <div> Error loading details, please try again! <Link to={`/`}> <button>Return Home</button> </Link></div>
+    } else {
+       <div className="cocktailDetailsView">
       <div className="cocktailDetails">
         <Link to={`/`}> <button>Return Home</button> </Link>
         <Link to={`/favorites`}> <button>View Your Favorite Cocktails</button> </Link>
@@ -31,6 +36,7 @@ class CocktailDetails extends Component {
       </div>
       <img className="detailsImage" src={this.state.details.image}/>
     </div>
+    }
   };
 };
 
