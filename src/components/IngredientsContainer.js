@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Ingredient from './Ingredient';
 import '../styling/IngredientsContainer.css';
 
@@ -9,7 +10,8 @@ const IngredientsContainer = ( {ingredientsList, selectFilter} ) => {
   });
 
   return (
-    <div >
+    <div className="ingredientsView">
+      <Link to={`/favorites`}><button className="favoriteButton">View Your Favorite Cocktails</button></Link>
       <h1 className="title">Choose your Ingredient</h1>
       <div className="ingredientsContainer">{listOfIngredients}</div>
     </div>

@@ -39,7 +39,6 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <header>BAR CART</header>
         <Switch>
           <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredCocktails={this.state.filteredCocktails}/>}/> 
           <Route exact path='/favorites' render={() => <Favorites favorites={this.state.favorites}/>} />

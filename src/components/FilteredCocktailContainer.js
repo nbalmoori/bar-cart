@@ -11,12 +11,18 @@ const FilteredCocktailContainer = ( {filteredCocktails, filter} ) => {
     />
   });
 
-  return (
-    <div>
-    <h2>The following drinks contain {filter}</h2>
-    <div className="filteredCocktails">{listOfCocktails}</div>
-    </div>
-  );
+  if (filter) 
+    {return (
+      <div className="filteredCocktailsView">
+      <h2>The following drinks contain {filter.toLowerCase()}:</h2>
+      <div className="filteredCocktails">{listOfCocktails}</div>
+      </div>
+    );
+  } else {
+    return (
+      <h2>then scroll down!</h2>
+    )
+  }
 };
 
 export default FilteredCocktailContainer;

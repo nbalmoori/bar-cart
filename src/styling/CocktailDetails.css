@@ -1,0 +1,11 @@
+.cocktailDetailsView {
+  display: flex;
+}
+
+.cocktailDetails {
+  padding: 3em;
+}
+
+.detailsImage {
+  width: 50vw;
+}

@@ -1,11 +1,13 @@
 .ingredient {
-  /* border: 2px solid black; */
   height: 150px;
   width: 100px;
+  padding: 1em;
+  cursor: pointer;
+  margin: 1em;
 }
 
 .ingredient-image {
-  height: 75px;
+  height: 100px;
 }
 
 .ingredient-image,

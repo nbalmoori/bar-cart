@@ -1,0 +1,25 @@
+header {
+  display: flex;
+}
+
+.homepageHeader {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homepageImage {
+  width: 50vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.homepageTitle {
+  font-size: 5em;
+  margin: 0;
+}
+
+.homepageDescription {
+  padding: 3em;
+}
