@@ -18,6 +18,7 @@ class App extends Component {
     };
   };
 
+
   componentDidMount = () => {
     getFetch('list.php?i=list')
     .then(data => dataIngredientsCleaner(data))
@@ -44,7 +45,6 @@ class App extends Component {
           <Route exact path='/' render={() => <Homepage ingredientsList={this.state.ingredientsList} selectFilter={this.selectFilter} filter={this.state.filter} filteredCocktails={this.state.filteredCocktails}/>}/> 
           <Route exact path='/favorites' render={() => <Favorites favorites={this.state.favorites}/>} />
           <Route exact path='/:id' render={({ match }) => <CocktailDetails id={match.params.id} addToFavorites={this.addToFavorites}/>}></Route>
-          <Route path="*" component={Error}/>
         </Switch>
       </main>
     );
@@ -52,4 +52,3 @@ class App extends Component {
 };
 
 export default App;
-

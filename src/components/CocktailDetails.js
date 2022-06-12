@@ -17,26 +17,27 @@ class CocktailDetails extends Component {
     getFetch(`lookup.php?i=${this.state.id}`)
     .then(data => dataCocktailCleaner(data))
     .then(data => this.setState({details: data}))
-    .catch(this.setState({error: true}))
   };
 
   render = () => {
-    if (this.state.error) {
+    if (!this.state.details.name) {
       return <div> Error loading details, please try again! <Link to={`/`}> <button>Return Home</button> </Link></div>
     } else {
-       <div className="cocktailDetailsView">
-      <div className="cocktailDetails">
-        <Link to={`/`}> <button>Return Home</button> </Link>
-        <Link to={`/favorites`}> <button>View Your Favorite Cocktails</button> </Link>
-        <h1>{this.state.details.name}</h1>
-        <p><b>Ingredients:</b> {this.state.details.ingredients}</p>
-        <p><b>Instructions</b>: {this.state.details.instructions}</p>
-        <p><b>Glassware</b>: {this.state.details.glass}</p>
-        <button onClick={() => this.props.addToFavorites(this.state.details)}>Add to Favorites</button>
+      return (
+      <div className="cocktailDetailsView">
+        <div className="cocktailDetails">
+          <Link to={`/`}> <button>Return Home</button> </Link>
+          <Link to={`/favorites`}> <button>View Your Favorite Cocktails</button> </Link>
+          <h1>{this.state.details.name}</h1>
+          <p><b>Ingredients:</b> {this.state.details.ingredients}</p>
+          <p><b>Instructions</b>: {this.state.details.instructions}</p>
+          <p><b>Glassware</b>: {this.state.details.glass}</p>
+          <button onClick={() => this.props.addToFavorites(this.state.details)}>Add to Favorites</button>
+        </div>
+        <img className="detailsImage" src={this.state.details.image}/>
       </div>
-      <img className="detailsImage" src={this.state.details.image}/>
-    </div>
-    }
+      )
+    };
   };
 };
 
