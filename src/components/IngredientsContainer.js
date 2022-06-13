@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Ingredient from './Ingredient';
 import '../styling/IngredientsContainer.css';
 
@@ -17,6 +18,10 @@ const IngredientsContainer = ( {ingredientsList, selectFilter} ) => {
       <div className="ingredientsContainer">{listOfIngredients}</div>
     </div>
   );
+};
+
+IngredientsContainer.propTypes = {
+  ingredientsList: PropTypes.array
 };
 
 export default IngredientsContainer;
