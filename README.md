@@ -11,12 +11,15 @@ Be your own bartender! With BAR CART, you can find inspiration to create a signa
 ## Application in Action:
 
 Choose an Ingredient from our list!
+
 ![barcart_homepage_giphy](https://user-images.githubusercontent.com/95309774/173272067-4bfba039-ae16-4152-b7b2-6a07526fd22d.gif)
 
 Click on a cocktail to see more details, including the recipe
+
 ![barcart_details_giphy](https://user-images.githubusercontent.com/95309774/173271898-a21deb83-e53b-4614-af2b-948a8aa3cec5.gif)
 
 Add cocktails to your favorite recipes and view them in the favorites page
+
 ![barcart_favorites_giphy](https://user-images.githubusercontent.com/95309774/173272028-851ab011-9d9f-4a2c-bc20-56908ef677fd.gif)
 
 ## Set Up:
