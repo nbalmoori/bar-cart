@@ -4,7 +4,6 @@ import getFetch, { dataFilterCleaner, dataIngredientsCleaner } from '../apiCalls
 import Homepage from './Homepage';
 import CocktailDetails from './CocktailDetails';
 import Favorites from './Favorites';
-import Error from './Error';
 import '../styling/App.css';
 
 class App extends Component {
@@ -17,7 +16,6 @@ class App extends Component {
       favorites: [],
     };
   };
-
 
   componentDidMount = () => {
     getFetch('list.php?i=list')

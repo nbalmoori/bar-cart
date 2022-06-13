@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import IngredientsContainer from './IngredientsContainer';
 import FilteredCocktailContainer from './FilteredCocktailContainer';
-import homepageImage from '../assets/homepage.jpg'
+import homepageImage from '../assets/homepage.jpg';
 import '../styling/Homepage.css';
 
 
@@ -23,7 +24,13 @@ const HomePage = ({ ingredientsList, selectFilter, filter, filteredCocktails}) =
       <IngredientsContainer ingredientsList={ingredientsList} selectFilter={selectFilter}/>
       <FilteredCocktailContainer filter={filter} filteredCocktails={filteredCocktails}/>
     </div>
-  )
-}
+  );
+};
+
+HomePage.propTypes = {
+  ingredientsList: PropTypes.array,
+  filter: PropTypes.string,
+  filteredCocktails: PropTypes.array
+};
 
 export default HomePage;

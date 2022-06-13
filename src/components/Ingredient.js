@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styling/Ingredient.css';
 
 const Ingredient = ({name, selectFilter}) => {
@@ -7,6 +8,10 @@ const Ingredient = ({name, selectFilter}) => {
       <p className="ingredient-name">{name}</p>
     </div>
   );
+};
+
+Ingredient.propTypes = {
+  name: PropTypes.string,
 };
 
 export default Ingredient;

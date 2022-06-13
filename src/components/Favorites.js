@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Cocktail from './Cocktail';
 import '../styling/Favorites.css';
 
@@ -21,6 +22,10 @@ const Favorites = ( {favorites} ) => {
       <div className="favoriteCocktails">{listOfFavoriteCocktails}</div>
     </div>
   );
+};
+
+Favorites.propTypes = {
+  favorites: PropTypes.array,
 };
 
 export default Favorites;
