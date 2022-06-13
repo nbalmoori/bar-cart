@@ -17,7 +17,7 @@ const Favorites = ( {favorites} ) => {
     <div className="favoritesPageView">
       <h1>Favorite Recipes</h1>
       {!favorites.length && <h2>Glass empty! No favorites saved yet.</h2>}
-      <Link to={`/`}><button>Return Home</button></Link>
+      <Link to={`/`}><button className="homeButton">Return Home</button></Link>
       <div className="favoriteCocktails">{listOfFavoriteCocktails}</div>
     </div>
   );
