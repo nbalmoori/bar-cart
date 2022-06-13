@@ -1,0 +1,13 @@
+{
+  "drinks": [
+    {
+      "strIngredient1": "Whiskey"
+    },
+    {
+      "strIngredient1": "Vodka"
+    },
+    {
+      "strIngredient1": "Lemon"
+    }
+  ]
+}

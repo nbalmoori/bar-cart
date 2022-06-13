@@ -18,7 +18,7 @@ const HomePage = ({ ingredientsList, selectFilter, filter, filteredCocktails}) =
             If one of the cocktails peaks your interest, click on it to find out more.
             Cheers!</p>
         </div>
-        <img className="homepageImage" src={homepageImage}/>
+        <img className="homepageImage" src={homepageImage} alt="Picture of three cocktails"/>
       </header>
       <IngredientsContainer ingredientsList={ingredientsList} selectFilter={selectFilter}/>
       <FilteredCocktailContainer filter={filter} filteredCocktails={filteredCocktails}/>
