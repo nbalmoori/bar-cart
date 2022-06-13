@@ -8,4 +8,14 @@
 
 .detailsImage {
   width: 50vw;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .cocktailDetailsView {
+    flex-direction: column;
+  }
+  .detailsImage {
+    width: 100vw;
+  }
 }

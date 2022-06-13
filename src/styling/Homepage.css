@@ -23,3 +23,13 @@ header {
 .homepageDescription {
   padding: 3em;
 }
+
+@media screen and (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  .homepageHeader,
+  .homepageImage {
+    width: 100vw;
+  }
+}

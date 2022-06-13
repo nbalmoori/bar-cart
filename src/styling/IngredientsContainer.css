@@ -9,7 +9,7 @@
 .ingredientsContainer {
   overflow: auto;
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 80vw;
   padding: 1em;
 }
