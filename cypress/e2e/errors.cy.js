@@ -23,7 +23,7 @@ describe ('Error-handling', () => {
     cy.url('http://localhost:3000/')
   });
 
-  it('Should see an error if the url does not exist and user can redirect to homepage', () => {
+  it.skip('Should see an error if the url does not exist and user can redirect to homepage', () => {
     cy.visit('http://localhost:3000/potato')
     cy.contains('Error loading details, please try again!')
     cy.get('button').should('have.text', 'Return Home')
